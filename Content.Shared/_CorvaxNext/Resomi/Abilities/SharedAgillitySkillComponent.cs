@@ -40,7 +40,7 @@ public sealed partial class AgillitySkillComponent : Component
     public float StaminaDamagePassive = 3f;
 
     [DataField("sprintSpeedModifier")]
-    public float SprintSpeedModifier = 0.2f; //+10%
+    public float SprintSpeedModifier = 0.2f; //+20%
     public float SprintSpeedCurrent = 1f;
 
     /// <summary>
