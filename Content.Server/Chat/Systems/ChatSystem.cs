@@ -593,7 +593,7 @@ private void SendEntityWhisper(
             // How the entity perceives the message depends on whether it can understand its language
 
 
-            if (data.Range <= WhisperClearRange)
+            if (data.Range <= (TryComp<ChatModifierComponent>(listener, out var modifier) ? modifier.WhisperListeningRange : WhisperClearRange)) //Corvax-Next-Resomi
             {
                 var perceivedMessage = FormattedMessage.EscapeText(canUnderstandLanguage ? message : languageObfuscatedMessage); // backmen: language
                 var wrappedPerceivedMessage = WrapWhisperMessage(source, "chat-manager-entity-whisper-wrap-message", nameIdentity, perceivedMessage, language);
